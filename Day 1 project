@@ -1,0 +1,5 @@
+print('Welcome to my first Python project!')
+lovers_name = input ('Who do you love the most?\n')
+habits = input ("Give me one of your habits.\n")
+Adj = input ('Which adj can best described your girlfriend?\n')
+print ("Your band name could be: " + Adj +' '+ lovers_name + " is " + habits)
