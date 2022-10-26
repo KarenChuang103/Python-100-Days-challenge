@@ -1,0 +1,33 @@
+# - Assignment 4 - 
+
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+
+#change the upper letters to lower letters
+lower_letters_name1 = name1.lower()
+lower_letters_name2 = name2.lower()
+
+#counnt the letters in TRUE
+T_in_both_name = lower_letters_name1.count('t') + lower_letters_name2.count('t')
+R_in_both_name = lower_letters_name1.count('r') + lower_letters_name2.count('r')
+U_in_both_name = lower_letters_name1.count('u') + lower_letters_name2.count('u')
+E_in_both_name = lower_letters_name1.count('e') + lower_letters_name2.count('e')
+first_digit = T_in_both_name + R_in_both_name + U_in_both_name +  E_in_both_name 
+
+#count the letters in LOVE
+L_in_both_name = lower_letters_name1.count('l') + lower_letters_name2.count('l')
+O_in_both_name = lower_letters_name1.count('o') + lower_letters_name2.count('o')
+V_in_both_name = lower_letters_name1.count('v') + lower_letters_name2.count('v')
+E_in_both_name = lower_letters_name1.count('e') + lower_letters_name2.count('e')
+second_digit = L_in_both_name + O_in_both_name + V_in_both_name +  E_in_both_name 
+
+#calculate the score
+score = first_digit * 10 + second_digit
+
+if score < 10 or score > 90:
+    print(f"Your score is {score}, you go together like coke and mentos.")
+elif 40 <= score <= 50:
+    print(f"Your score is {score}, you are alright together.")
+else:
+    print(f"Your score is {score}.")
