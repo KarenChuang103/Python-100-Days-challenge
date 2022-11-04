@@ -1,0 +1,32 @@
+
+file = open("my_file.txt")
+contents = file.read()
+print(contents)
+file.close()
+
+#equal to 
+with open("my_file.txt") as file:
+    contents = file.read()
+    print(contents)
+
+# write and replace the text in the file
+with open("my_file.txt", mode="w") as file:
+    file.write("New text.")
+
+# append text in the file without replace all the original one
+with open("my_file.txt", mode="a") as file:
+    file.write("\nNew text.")
+
+# open an unexisting file (only exist when you are at the write mode and the file doesn't currently exist.)
+with open("new_file.txt", mode="w") as file:
+    file.write("new_text")
+
+# absolute path of the file
+with open("/Users/Karen/Downloads/my_file.txt") as file:
+    contents = file.read()
+    print(contents)
+
+# relative path of the file
+with open("../../Downloads/my_file.txt") as file:
+    contents = file.read()
+    print(contents)

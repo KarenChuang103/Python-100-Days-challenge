@@ -1,0 +1,54 @@
+import pandas
+
+data = pandas.read_csv("weather_data.csv")
+print(data["temp"])
+
+
+
+import pandas
+
+data = pandas.read_csv("weather_data.csv")
+
+data_dict = data.to_dict()
+print(data_dict)
+
+temp_list = data["temp"].to_list()
+print(temp_list)
+
+# calculate the average temperature
+import pandas
+from statistics import mean
+data = pandas.read_csv("weather_data.csv")
+
+temp_list = data["temp"].to_list()
+temp_average = mean(temp_list)
+print(temp_average)
+
+# another way to calculate the temperature
+import pandas
+data = pandas.read_csv("weather_data.csv")
+
+temp_avg = data["temp"].mean()
+print(temp_avg)
+
+#how to get data in a row
+import pandas
+data = pandas.read_csv("weather_data.csv")
+
+data[data.day == "Monday"]
+
+#get the day of max temperature
+import pandas
+data = pandas.read_csv("weather_data.csv")
+print(data[data.temp == data.temp.max()])
+
+#Create a dataframe from scratch
+
+import pandas
+data_dict = {
+    "students": ["Amy", "James", "Angela"],
+    "scores": [76, 56, 65]
+}
+data = pandas.DataFrame(data_dict)
+print(data)
+data.to_csv("new_file.csv")
