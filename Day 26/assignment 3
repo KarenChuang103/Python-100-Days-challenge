@@ -1,0 +1,27 @@
+file1 = open("file1.txt")
+contents_1 = file1.read()
+list_1 = contents_1.split()
+list_1 = [int(i) for i in list_1]
+
+file2 = open("file2.txt")
+content_2 = file2.read()
+list_2 = content_2.split()
+list_2 = [int(i) for i in list_2]
+
+commom_list = []
+for i in list_1:
+    if i in list_2:
+        commom_list.append(i)
+print(commom_list)
+
+
+
+
+# ANOTHER METHOD
+with open("file1.txt") as file1:
+    file_1_data = file1.readlines()
+
+with open("file2.txt") as file2:
+    file_2_data = file2.readlines()
+
+result = [int(num) for num in file_1_data if num in file_2_data]
