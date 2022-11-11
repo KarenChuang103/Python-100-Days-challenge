@@ -1,0 +1,21 @@
+#Write - json.dump()
+with open("data.json", "w") as data_file:
+   json.dump(new_data, data_file, indent=4)
+
+#Read - json.load()
+with open("data.json", "r") as data_file:
+   data = json.load(data_file)
+   print(data)
+
+#Update - json.update()
+with open("data.json", "r") as data_file:
+	#Reading old data
+	data = json.load(data_file)
+	#updating old data with data
+	data.update(new_data)
+        
+with open("data.json", "w") as data_file:
+	#Saving updated data
+	data.dump(data, data_file, indent=4)
+
+
