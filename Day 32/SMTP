@@ -1,0 +1,29 @@
+import smtplib
+
+#for Gmail
+my_email = "useforpython123@gmail.com"
+connection = smtplib.SMTP("smpt.gmail.com")
+
+#for Hotmail
+my_email = "useforpython123@hotmail.com"
+connection = smtplib.SMTP("smpt.live.com")
+
+#for Yahoo
+my_email = "useforpython123@yahoo.com.tw"
+connection = smtplib.SMTP("smpt.mail.yahoo.com")
+
+#Send email using python on smtplip
+
+import smtplib
+
+my_email = "useforpythontest123@gmail.com"
+password = "gehevjyturfpwnjd"
+
+with smtplib.SMTP("smtp.gmail.com") as connection:
+    connection.starttls()
+    connection.login(user=my_email, password=password)
+    connection.sendmail(
+        from_addr=my_email,
+        to_addrs="useforpython123@yahoo.com",
+        msg="Subject:Hello\n\nThis is the body of my email"
+    )

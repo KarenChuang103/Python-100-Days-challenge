@@ -1,0 +1,36 @@
+import requests
+
+response = requests.get(url="http://api.open-notify.org/iss-now.json")
+print(response)
+
+# you want to know the actual status of the code, instead of the response object
+print(response.status_code)
+
+# ----------------------------
+import requests
+
+response = requests.get(url="http://api.open-notify.org/isss-now.json")
+response.raise_for_status()
+
+> requests.exceptions.HTTPError: 404 Client Error
+: Not Found for url: http://api.open-notify.org/isss-now.json
+
+# get data from response
+
+data = response.json()
+print(data)
+
+> {'iss_position': {'longitude': '178.7533', 'latitude': '-40.8595'}, 'timestamp': 1668796200, 'message': 'success'}
+
+data = response.json()
+
+longitude = data["iss_position"]["longitude"]
+latitude = data["iss_position"]["latitude"]
+
+iss_position = (longitude, latitude)
+print(iss_position)
+
+> ('-174.5560', '-44.1877')
+
+
+
